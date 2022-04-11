@@ -1,0 +1,10 @@
+.paginado {
+    display: inline;
+    color: white;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: rgb(237, 164, 202);
+    border-radius: 100px;
+    margin: 4px;
+}

@@ -1,7 +1,23 @@
-.App {
+/* .App {
   text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-left: 13%;
+} */
+
+body {
+  /* background-image: url('./components/imgs/background.jpg');
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; */
+  /* justify-content: center;
+  align-items: center; */
+  /* margin-left: 13%; */
+  background-color: rgb(42, 40, 51);
 }
 
+/* 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +52,4 @@
     transform: rotate(360deg);
   }
 }
+ */
