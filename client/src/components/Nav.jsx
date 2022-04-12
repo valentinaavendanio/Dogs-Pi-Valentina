@@ -1,21 +1,23 @@
 import React from "react";
-import style from "./Nav.module.css";
+import s from "./Nav.module.css";
 import { Link } from "react-router-dom";
 import { SearchBar } from "./SearchBar";
 
 export const Nav = () => {
   return (
-    <div className={style.nav}>
-        <div className={style.contenedor}>
-            <Link className={style.link}
+    <div className={s.nav}>
+        <div className={s.contenedor}>
+            <Link className={s.link}
             to="/home">
-            <h1 className={style.name}>Henry Dogs </h1>
+            <h1 className={s.name}>DOGSAPP</h1>
         </Link>
-            <Link to="/dog" className={style.link}>
-                <h2 className={style.create}>Create Dog</h2>
+            <Link to="/dog" className={s.link}>
+            
+                <h2 className={s.create}>Create Dog</h2>
             </Link>
+    
         
-        <div className={style.buscador}>
+        <div className={s.buscador}>
             <SearchBar />
         </div>
         </div>

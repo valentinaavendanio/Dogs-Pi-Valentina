@@ -53,7 +53,7 @@ export const Detail = (props) => {
                         )}
                   </h4>
                   <Link to='/home'>
-                  <h3>Press HERE for go back</h3>
+                  <h3 className="backmenu">Press HERE for go back</h3>
                   </Link>
                 </li>
               </ul>

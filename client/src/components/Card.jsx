@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import imgs from "./imgs/crearperrito.jpeg";
-
 import s from "./Card.module.css";
 
 export const Card = ({ name, img, temperament, temperaments, id }) => {

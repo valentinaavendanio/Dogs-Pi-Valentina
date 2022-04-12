@@ -11,29 +11,16 @@ export const FILTER_TEMPERAMENT = "FILTER_TEMPERAMENT";
 export const FILTER_CREATED = "FILTER_CREATED";
 export const CLEAN_Q = "CLEAN_Q";
 
-// import {
-//   GET_DOGS,
-//   GET_DETAIL,
-//   GET_TEMPERAMENTS,
-//   SEARCH_BY_NAME,
-//   ADD_DOG,
-//   FILTER_BY_VALUE,
-//   FILTER_TEMPERAMENT,
-//   FILTER_CREATED,
-//   CLEAN_Q,
-// } from "./types";
-
-
-//
-export function getDogs() {
+export function getDogs() {  //aca sucede la conexion entre el front y el back
   return async function (dispatch) {
-    var json = await axios.get("http://localhost:3001/dogs", {});
+    var json = await axios.get("http://localhost:3001/dogs");
     return dispatch({
       type: GET_DOGS,
       payload: json.data,
     });
   };
 }
+
 export function getDetail(id) {
   return async (dispatch) => {
     const json = await axios.get("http://localhost:3001/dogs/"+id);
@@ -43,6 +30,7 @@ export function getDetail(id) {
     });
   };
 }
+
 export function getTemperaments() {
   return async (dispatch) => {
     let json = await axios.get("http://localhost:3001/temperaments");
@@ -52,22 +40,13 @@ export function getTemperaments() {
     });
   };
 }
-// export const searchByName = (name) => {
-//   return async (dispatch) => {
-//     const json = await axios.get(`http://localhost:3001/dogs?name=${name}`);
-//     return dispatch({
-//       type: SEARCH_BY_NAME,
-//       payload: json.data,
-//     });
-//   };
-// };
+
 export const searchByName = (name) => {
-  return (dispatch) => {
-    axios.get(`http://localhost:3001/dogs?name=${name}`).then((data) => {
-      return dispatch({
-        type: SEARCH_BY_NAME,
-        payload: data.data,
-      });
+  return async (dispatch) => {
+    const json = await axios.get(`http://localhost:3001/dogs?name=${name}`);
+    return dispatch({
+      type: SEARCH_BY_NAME,
+      payload: json.data,
     });
   };
 };

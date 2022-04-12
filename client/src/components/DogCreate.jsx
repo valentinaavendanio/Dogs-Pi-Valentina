@@ -36,7 +36,7 @@ export const DogCreate = () => {
     setNamesTemp((names) => [...names, e.target.options[index].text]);
     setValues((values) => ({
       ...values,
-      temperament: [...values.temperament, Number(e.target.value)],
+      temperament: [...values.temperament, e.target.value],
     }));
   };
 
@@ -66,7 +66,7 @@ export const DogCreate = () => {
   }, [dispatch]);
 
   return (
-  <div className={s.probando}>
+  <div className="todo">
     <div className={s.todo}>
       <h1>Create your own dog</h1>
       <form onSubmit={handleSubmit}>
@@ -146,7 +146,7 @@ export const DogCreate = () => {
           <select onChange={handleSelect}>
             <option value="all">Todos</option>
             {temperaments?.map((elem) => (
-              <option key={elem.id} value={elem.id}>
+              <option key={elem.id} value={elem.name}>
                 {elem.name}
               </option>
             ))}

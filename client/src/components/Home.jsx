@@ -16,32 +16,21 @@ import s from "./Home.module.css";
 
 export const Home = () => {
   const dispatch = useDispatch();
-  const allDogs = useSelector((state) => state.dogs);
+  const allDogs = useSelector((state) => state.dogs); //logra que se me una el indexoflastdog y el indexoffirstdog
   const temperaments = useSelector((state) => state.temperaments);
   const [currentPage, setCurrentPage] = useState(1);
   const [orden, setOrden] = useState("");
-  const [dogsPerPage, setDogsPage] = useState(9);
-  //
-  /**
-   * El índice del último perro es: la página actual (Default: 1), por la cantidad de perros por página (Default: 9).
-   */
-  const indexOfLastDog = currentPage * dogsPerPage; // 9
-  //|||||||||||||||||||||||||||||||||||||||||||||||
-  /**
-   * El índice del primer perro es: el índice del último perro (Default: 9), menos la cantidad de perros por página (Default: 9).
-   */
-  const indexOfFirstDog = indexOfLastDog - dogsPerPage; // 0
-  //||||||||||||||||||||||||||||||||||||||||||||||||
-  /**
-   * La constante agarra solo las porciones que estan marcadas en los parámetros, que serían el índice del primer perro (0), hasta el índice del último perro (9), por lo tanto quedarían solo 9 perros por página. Renderizando desde el perro numero 0 hasta el perro numero 8, siendo 9 perros en total. Magic.
-   * PÁGINA 1 -> Primer perro 0 <---> Último perro 9.
-   * PÁGINA 2 -> Primer perro 10 <---> Último perro 19.
-   */
+  const [dogsPerPage, setDogsPage] = useState(8);
+  
+  const indexOfLastDog = currentPage * dogsPerPage;
+  const indexOfFirstDog = indexOfLastDog - dogsPerPage;
   const currentDogs = allDogs.slice(indexOfFirstDog, indexOfLastDog);
-  //+
+  //lo que hago con slice es pasar cortar lo que necesito, desde, hasta. En este caso del perro 0 al perro 8.
+
+
 
   const paginado = (pageNumber) => {
-    setCurrentPage(pageNumber);
+    setCurrentPage(pageNumber); //estado inicial, seria cada pagina
   };
 
   useEffect(() => {
@@ -114,11 +103,6 @@ export const Home = () => {
         </select>
       </div>
 
-      <Paginado
-        dogsPerPage={dogsPerPage}
-        allDogs={allDogs.length}
-        paginado={paginado}
-      />
 
       <div className={s.containerCards}>
         {currentDogs &&
@@ -137,6 +121,11 @@ export const Home = () => {
             );
           })}
       </div>
+          <Paginado
+            dogsPerPage={dogsPerPage}
+            allDogs={allDogs.length}
+            paginado={paginado}
+          />
     </div>
   );
 };

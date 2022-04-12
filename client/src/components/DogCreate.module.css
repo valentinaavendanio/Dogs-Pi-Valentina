@@ -1,9 +1,15 @@
 .todo {
   /*   padding-top: 300px;
     padding-left: 1050px; */
-    align-items: center;
-    align-content: center;
-    justify-content: center;
+    background: rgb(203, 118, 132);
+    padding: 12px;
+    /* padding-bottom: 6%; */
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 70px;
+    text-align: center;
 }
 
 .submiteo {
@@ -20,5 +26,6 @@
 .labbel {
     margin-top: 700px;
 }
+
 
 
